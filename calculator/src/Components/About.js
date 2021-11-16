@@ -1,28 +1,28 @@
 import React from 'react'
 /**
  * @author: Madhavi itikala Ankith Siva
- * The below code is to display the main body  of the page
+ * The below code is to display the about
  * @returns jsx
  */
 
 class About extends React.Component {
-    render() {
+	render() {
 
-        return (
-            <>
-                <div class="container">
-                    <div class="result">
-                        <p id="result-box">About</p>
-                    </div>
-                    <p>Basic Claculator App.Does Basic Calculations
-                    </p>
+		return (
+			<>
+				<div class="container">
+					<div class="result">
+						<p id="result-box">About</p>
+					</div>
+					<p>Basic Claculator App.Does Basic Calculations
+					</p>
 
 
-                </div>
+				</div>
 
-            </>
-        )
+			</>
+		)
 
-    }
+	}
 }
 export default About;
