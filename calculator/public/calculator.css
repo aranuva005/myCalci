@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
+header {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
 body {
   background: #dde1e7;
   font-family: "Montserrat", sans-serif;
@@ -65,4 +70,10 @@ body {
   color: #ed11d7;
   font-size: 20px;
   font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
 }

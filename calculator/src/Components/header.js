@@ -6,9 +6,14 @@ import React, { useState } from "react";
  * @returns jsx
  */
 export function Headers() {
-    const [counter,setCounter] = useState(23);
-     return(
-        <h1>no of calculations:{counter}</h1>
-     )
+    const [counter, setCounter] = useState(23);
+    return (
+        <header>
+
+            <h1>No of calculations:{counter}</h1>
+
+        </header>
+
+    )
 
 }
