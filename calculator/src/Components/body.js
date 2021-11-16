@@ -16,7 +16,8 @@ class Body extends React.Component {
 
         this.state = {
             result: "",
-            history: [],
+            count:0,
+            history: 0,
             keypad: [{
                 name: "%"
             }, {
@@ -59,6 +60,7 @@ class Body extends React.Component {
             console.log(this.state)
             this.calculate()
             this.setState({ history: (this.state.history) + (this.state.result) })
+            count:this.state.count=this.state.count+1
         }
 
         else if (button === "AC") {
@@ -93,7 +95,7 @@ class Body extends React.Component {
     reset = () => {
         this.setState({
             result: "",
-            history: []
+            history: ""
         })
     };
 
@@ -107,7 +109,7 @@ class Body extends React.Component {
         // const { displayValue } = this.state;
         return (
             <>
-                <Headers historyCount={this.state.history.length}></Headers>
+                <Headers setCount={this.state.count}></Headers>
                 <div class="container">
                     < Result result={this.state.result} history={this.state.history} />
                     < KeyPadComponent onClick={this.onClick} matter="button num-button" keypad={this.state.keypad} />

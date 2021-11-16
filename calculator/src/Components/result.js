@@ -8,11 +8,11 @@ import React, { Component } from "react";
 
 class ResultComponent extends Component {
   render() {
-    let { result, history } = this.props;
+    let { result, count } = this.props;
     return (
       <>
         <div>
-          <p>{history}</p>
+          <p>{count}</p>
         </div>
         <div class="result">
           <p id="result-box">{result}</p>

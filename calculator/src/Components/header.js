@@ -6,11 +6,11 @@ import React, { useState } from "react";
  * @returns jsx
  */
 export function Headers(props) {
-    const { historyCount } = props
+    const { setCount } = props
     return (
         <header>
 
-            <h1>No of calculations : {historyCount}</h1>
+            <h1>No of calculations : {setCount}</h1>
 
         </header>
 
