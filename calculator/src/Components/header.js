@@ -5,15 +5,15 @@ import React, { useState } from "react";
  * @param counter:Integer
  * @returns jsx
  */
-export function Headers() {
-	const [counter, setCounter] = useState(23);
-	return (
-		<header>
+export function Headers(props) {
+    const { historyCount } = props
+    return (
+        <header>
 
-			<h1>No of calculations : {counter}</h1>
+            <h1>No of calculations : {historyCount}</h1>
 
-		</header>
+        </header>
 
-	)
+    )
 
 }

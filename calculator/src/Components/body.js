@@ -1,6 +1,7 @@
 import React from 'react'
 import KeyPadComponent from './keypadcomponent'
 import Result from './result'
+import { Headers } from './header';
 /**
  * @author: Madhavi itikala, Ankith, Siva
  * The below code is to display the main body  of the page
@@ -15,6 +16,7 @@ class Body extends React.Component {
 
         this.state = {
             result: "",
+            history: [],
             keypad: [{
                 name: "%"
             }, {
@@ -53,7 +55,10 @@ class Body extends React.Component {
     // This is an event handler, when an button is clicked the function in event handler will be executed.
     onClick = button => {
         if (button === "=") {
+
+            console.log(this.state)
             this.calculate()
+            this.setState({ history: (this.state.history) + (this.state.result) })
         }
 
         else if (button === "AC") {
@@ -87,7 +92,8 @@ class Body extends React.Component {
 
     reset = () => {
         this.setState({
-            result: ""
+            result: "",
+            history: []
         })
     };
 
@@ -101,8 +107,9 @@ class Body extends React.Component {
         // const { displayValue } = this.state;
         return (
             <>
+                <Headers historyCount={this.state.history.length}></Headers>
                 <div class="container">
-                    < Result result={this.state.result} />
+                    < Result result={this.state.result} history={this.state.history} />
                     < KeyPadComponent onClick={this.onClick} matter="button num-button" keypad={this.state.keypad} />
 
                 </div>

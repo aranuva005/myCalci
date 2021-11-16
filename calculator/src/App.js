@@ -13,7 +13,6 @@ import { Footer } from './Components/footer';
 function App() {
   return (
     <>
-      <Headers></Headers>
       <Body></Body>
       <Footer></Footer>
     </>
