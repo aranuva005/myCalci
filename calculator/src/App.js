@@ -5,6 +5,11 @@ import Body from './Components/body';
 import { Footer } from './Components/footer';
 
 
+/**
+ * @author: Madhavi itikala, Ankith, Siva
+ * @returns jsx
+ */
+
 function App() {
   return (
     <>

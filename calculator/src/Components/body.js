@@ -1,6 +1,6 @@
 import React from 'react'
 /**
- * @author: Madhavi itikala Ankith Siva
+ * @author: Madhavi itikala, Ankith, Siva
  * The below code is to display the main body  of the page
  * @returns jsx
  */
@@ -17,7 +17,7 @@ class Body extends React.Component {
 
 
                     <div class="buttons">
-                        <div class="button action-btn" id="clear"><button > AC </button></div>
+                        <div class="button action-btn" id="clear"> AC </div>
                         <div class="button action-btn"> BC</div>
                         <div class="button num-button  action-btn"> %</div>
                         <div class="button num-button  calc-action-btn"> /</div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import About from "./About";
 /**
- * @author: Madhavi itikala Ankith Siva
+ * @author: Madhavi itikala, Ankith, Siva
  * The below code is to display the footer of the page
  * @returns jsx
  */
@@ -14,5 +14,6 @@ export function Footer() {
         </footer>
 
     )
+
 
 }
