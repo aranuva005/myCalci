@@ -50,12 +50,28 @@ class Body extends React.Component {
             }]
 		}
 	}
+// This is an event handler, when an button is clicked the function in event handler will be executed.
+	onClick = button => {
+		if(button === "="){
+			this.calculate()
+	}
 
-	onClick = button => {};
+	else if(button === "AC"){
+			this.reset()
+	}
+	else if(button === "BC"){
+			this.backspace()
+	}
+
+	else {
+			this.setState({
+					result: this.state.result + button
+			})
+	}
+	};
 
 	render() {
 		// const { displayValue } = this.state;
-
 		return (
 			<>
 				<div class="container">
