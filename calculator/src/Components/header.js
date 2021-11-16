@@ -10,7 +10,7 @@ export function Headers() {
     return (
         <header>
 
-            <h1>No of calculations:{counter}</h1>
+            <h1>No of calculations : {counter}</h1>
 
         </header>
 
