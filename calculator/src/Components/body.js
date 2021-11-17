@@ -17,7 +17,7 @@ class Body extends React.Component {
         this.state = {
             result: "",
             count:0,
-            history: 0,
+            history: [],
             keypad: [{
                 name: "%"
             }, {
@@ -59,8 +59,14 @@ class Body extends React.Component {
 
             console.log(this.state)
             this.calculate()
-            this.setState({ history: (this.state.history) + (this.state.result) })
-            count:this.state.count=this.state.count+1
+            this.setState({ history: `${this.state.history}  ${this.state.result}` })
+            if(this.state.result === ""){
+                this.state.count = this.state.count;
+            }else{
+                count:this.state.count=this.state.count+1
+
+            }
+            
         }
 
         else if (button === "AC") {
@@ -82,7 +88,9 @@ class Body extends React.Component {
         try {
             this.setState({
                 // eslint-disable-next-line
-                result: (eval(this.state.result) || "") + ""
+                result: (eval(this.state.result) || "") + "",
+                
+                
             })
         } catch (e) {
             this.setState({
@@ -94,8 +102,7 @@ class Body extends React.Component {
 
     reset = () => {
         this.setState({
-            result: "",
-            history: ""
+            result: ""
         })
     };
 

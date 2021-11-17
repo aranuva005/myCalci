@@ -6,13 +6,17 @@ header {
   padding: 25px;
 }
 body {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   background: #dde1e7;
+  
   font-family: "Montserrat", sans-serif;
 }
 .container {
   background: #dde1e7;
+  background-size: cover;
   width: 320px;
-  height: 550px;
   border-radius: 0.5em;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
   margin: 0 auto;
@@ -36,6 +40,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1em;
+  overflow: hidden;
 }
 .container .buttons .button,
 .container .buttons .num-button {
