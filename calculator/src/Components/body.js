@@ -1,13 +1,23 @@
-import React from 'react'
-import KeyPadComponent from './keypadcomponent'
-import Result from './result'
-import { Headers } from './header';
 /**
  * @author: Madhavi itikala, Ankith, Siva
  * The below code is to display the main body  of the page
  * @returns jsx
  */
 
+import React from 'react'
+import KeyPadComponent from './keypadcomponent'
+import Result from './result'
+import { Headers } from './header';
+// import {storeHistory,storeResult} from "../store/actions"
+import {storeHistory} from "../store/actions"
+import {connect} from "react-redux"
+
+const mapStateToProps =(state)=>({
+historyLength:state.user?.history?.length
+})
+const mapDispatchToProps =()=>({ 
+    storeHistory  //,storeResult
+})
 class Body extends React.Component {
 
     //using props and sending the data
@@ -56,10 +66,16 @@ class Body extends React.Component {
     // This is an event handler, when an button is clicked the function in event handler will be executed.
     onClick = button => {
         if (button === "=") {
+            
 
             console.log(this.state)
             this.calculate()
-            this.setState({ history: `${this.state.history}  ${this.state.result}` })
+            let arr=[...this.state.history]
+            // let arr1=[...this.state.result]
+            arr.push(this.state.result)
+            this.props.storeHistory(arr)
+            //this.props.storeResult(arr)
+            this.setState({ history: arr })
             if(this.state.result === ""){
                 this.state.count = this.state.count;
             }else{
@@ -113,10 +129,11 @@ class Body extends React.Component {
     };
 
     render() {
-        // const { displayValue } = this.state;
+        
         return (
             <>
-                <Headers setCount={this.state.count}></Headers>
+            {/* <h1>{this.props.historyLength}</h1> */}
+                <Headers setCount={this.props.historyLength}></Headers>
                 <div class="container">
                     < Result result={this.state.result} history={this.state.history} />
                     < KeyPadComponent onClick={this.onClick} matter="button num-button" keypad={this.state.keypad} />
@@ -127,4 +144,4 @@ class Body extends React.Component {
 
     }
 }
-export default Body;
+export default connect(mapStateToProps,mapDispatchToProps())(Body);

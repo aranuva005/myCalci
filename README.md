@@ -19,8 +19,8 @@ you can install package.json using command npm init --y
 To Run Test Suite:
 npm test .
 
-<!-- To Start Server:
-npm start . and this application runs on http://localhost:110/landing -->
+ To Start Server:
+npm start . and this application runs on http://localhost:3000/landing
  
 
 
@@ -28,6 +28,6 @@ npm start . and this application runs on http://localhost:110/landing -->
  contains one folder called calculator. It further contains src folder.
  In src(folder):
  It contains components folder which contains three files named as:
- header.js, body.js,footer.js,footer.js . 
+ header.js, body.js,footer.js,about.js,keypadcomponents.js, result.js . 
  
  
