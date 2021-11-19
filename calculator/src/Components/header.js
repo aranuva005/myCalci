@@ -10,7 +10,7 @@ export function Headers(props) {
     return (
         <header>
 
-            <h1>No of calculations : {setCount}</h1>
+            <h1>No of calculations(madhu) : {setCount}</h1>
 
         </header>
 

@@ -26,7 +26,7 @@ class Body extends React.Component {
 
         this.state = {
             result: "",
-            count:0,
+           // count:0,
             history: [],
             keypad: [{
                 name: "%"
@@ -66,38 +66,44 @@ class Body extends React.Component {
     // This is an event handler, when an button is clicked the function in event handler will be executed.
     onClick = button => {
         if (button === "=") {
-            
-
-            console.log(this.state)
             this.calculate()
-            let arr=[...this.state.history]
+            if(this.state.result === "" || this.state.result === "0" || this.state.result === "/" || this.state.result === "*" || this.state.result === "-" || this.state.result === "+" || this.state.result === "%" || this.state.result === "." || this.state.result == "error"){
+                this.state.count = this.state.count;
+            }else{
+                let arr=[...this.state.history]
             // let arr1=[...this.state.result]
             arr.push(this.state.result)
             this.props.storeHistory(arr)
             //this.props.storeResult(arr)
             this.setState({ history: arr })
-            if(this.state.result === ""){
-                this.state.count = this.state.count;
-            }else{
-                count:this.state.count=this.state.count+1
-
             }
-            
         }
-
+            
         else if (button === "AC") {
             this.reset()
+        }
+        else if (this.state.result === "error" || this.state.result === "Infinity") {
+            this.setState({
+                result: this.state.result
+            })
         }
         else if (button === "BC") {
             this.backspace()
         }
 
+        else if (this.state.result.length > 9) {
+            this.setState({
+                result: "error"
+            })
+        }
         else {
             this.setState({
                 result: this.state.result + button
             })
         }
+
     };
+    
     // This is an event handler, when an button is clicked the function in event handler will be executed.
     // eval function evaluates or executes an argument
     calculate = () => {
@@ -110,11 +116,14 @@ class Body extends React.Component {
             })
         } catch (e) {
             this.setState({
-                result: "error"
+                result: "error",
+                historyLength: this.state.history
+
             })
 
         }
     };
+
 
     reset = () => {
         this.setState({
